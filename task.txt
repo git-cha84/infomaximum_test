@@ -1,0 +1,22 @@
+Основной поток должен:
+1) Запустить несколько рабочих потоков (NumberOfThreads).
+2) Класть в одну очередь заданий задачи до тех пор, пока GetRequest() не вернёт NULL.
+3) Корректно остановить рабочие потоки. Они должны доделать текущий ProcessRequest, если он имеется, и остановиться. Если имеются необработанные задания, не обращать на них внимания.
+4) Завершить программу.
+Рабочий поток должен:
+1) Обрабатывать поступающие через очередь запросы с помощью ProcessRequest.
+2) Завершиться, как только основной поток ему это скомандует.
+Вызовы GetRequest() и ProcessRequest() могут работать долго.
+Код должен быть кроссплатформенным Windows-Linux.
+
+The main thread must:
+1) Start multiple worker threads (NumberOfThreads).
+2) Put task jobs into one queue until GetRequest() returns NULL.
+3) Correctly stop worker threads. They should finish the current ProcessRequest, if there is one, and stop. If there are unprocessed jobs, ignore them.
+4) Terminate the program.
+The worker thread should:
+1) Process incoming requests through the queue using ProcessRequest.
+2) Terminate as soon as the main thread tells it to do so.
+The GetRequest() and ProcessRequest() calls can run for a long time.
+The code should be cross-platform Windows-Linux.
+
